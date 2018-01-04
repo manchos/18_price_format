@@ -8,14 +8,15 @@ def format_price(price):
         return '{}{}'.format(get_format_before_dot_str(before_dot), get_after_dot_str(after_dot))
 
 
-def get_format_before_dot_str(before_dot_str, digits_amount_in_part=3):
+def get_format_before_dot_str(before_dot_str, digits_amount_in_part=3, one=1):
+    # one=1 - special for Wallie
     length = len(before_dot_str)
     if length > digits_amount_in_part:
         parts = len(before_dot_str) // digits_amount_in_part
-        parts_list = list(range(parts + 1))
+        parts_list = list(range(parts + one))
         for part in parts_list:
             parts_list[parts] = before_dot_str[length - digits_amount_in_part:length]
-            parts = parts - 1
+            parts = parts - one
             if parts != 0:
                 length = length - digits_amount_in_part
         parts_list[0] = before_dot_str[:length]
