@@ -1,6 +1,6 @@
 # Price Formatter
 
-Converts a string in a particular format (e.g. `3245.000000`) to another particular format. For more examples, refer to the tests.
+Converts a string in a particular format to another particular format. For more examples, refer to the tests.
 
 # Using
 In order to work, requires Python 3. You can either import `format_price` function or use the CLI interface:
