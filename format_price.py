@@ -12,12 +12,12 @@ def get_format_before_dot_str(before_dot_str, digits_amount_in_part=3):
     length = len(before_dot_str)
     if length > digits_amount_in_part:
         parts = len(before_dot_str) // digits_amount_in_part
-        parts_list = list(range(parts+1))
+        parts_list = list(range(parts + 1))
         for part in parts_list:
             parts_list[parts] = before_dot_str[length - digits_amount_in_part:length]
-            parts = parts-1
+            parts = parts - 1
             if parts != 0:
-                length = length-digits_amount_in_part
+                length = length - digits_amount_in_part
         parts_list[0] = before_dot_str[:length]
         return ' '.join(parts_list)
     else:
